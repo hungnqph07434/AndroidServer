@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="util.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="iconic/css/material-design-iconic-font.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Forum</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <i class="zmdi zmdi-font"></i>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link"  href="/forumProducts">Sản phẩm </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/productManager">Quản lý sản phẩm</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/uploadProduct">Cập nhập sản phẩm</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/forumUser" >Danh sách người dùng</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" action="searchNamePro" method="post">
+            <input class="form-control mr-sm-2" type="search" name="searchs" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+<div class="container">
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label >Tên sản phẩm</label>
+        <input  class="form-control" name="nameProduct"  placeholder="Nhập tên sản phẩm">
+    </div>
+    <div class="form-group">
+        <label >Giá sản phẩm</label>
+        <input class="form-control" name="priceProduct"  placeholder="Giá">
+    </div>
+    <div class="form-group ">
+        <label for="example-input-file">Ảnh sản phẩm</label>
+        <input type="file" name="image" multiple  class="form-control-file border">
+    </div>
+    <div class="form-group ">
+        <label >Loại sản phẩm</label>
+        <input class="form-control" name="specieProduct"  placeholder="Loại">
+    </div>
+    <div class="form-group">
+        <label >Ghi chú</label>
+        <input class="form-control" name="noteProduct"  placeholder="Ghi chú">
+    </div>
+    <button type="submit" class="btn btn-primary" name="btnUpload" value="upload">Submit</button>
+</form>
+</div>
+
+
+
+
+{{#if isShow}}
+    <script>
+        alert("{{alertMessage}}")
+    </script>
+{{/if}}
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
